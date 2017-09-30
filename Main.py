@@ -19,12 +19,13 @@ else:
             atk_mod = int(input("Attack modifier?:"))
             die_roll = 0
 
-            for i in num_dice: #Won't iterate!
-                die_roll = die_roll + random.randrange(1, max_side)
+            for num_dice in num_dice: #Won't iterate!
+                dmg = die_roll + random.randrange(1, max_side)
                 print(die_roll)
-            die_roll = die_roll + atk_mod
+                dmg + dmg
+            dmg = die_roll + atk_mod
 
-            print("You attacked for", die_roll, "damage.")
+            print("You attacked for", dmg, "damage.")
 
     else:
         print("Your attack fails to penetrate your enemies defenses!")
