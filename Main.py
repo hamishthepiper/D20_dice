@@ -14,18 +14,21 @@ else:
         winning = True
         print("You strike your enemy!")
         while winning:
-            num_dice = input("How many dice?:")
+            num_dice = int(input("How many dice?:"))
             max_side = int(input("How many sides?:"))
             atk_mod = int(input("Attack modifier?:"))
             die_roll = 0
+            i = 0
+            dmg = 0
 
-            for num_dice in num_dice: #Won't iterate!
-                dmg = die_roll + random.randrange(1, max_side)
+            while i < num_dice:
+                die_roll = random.randrange(1, max_side)
                 print(die_roll)
-                dmg + dmg
-            dmg = die_roll + atk_mod
+                dmg = dmg + die_roll
+                i += 1
+            dmg = dmg + atk_mod
 
             print("You attacked for", dmg, "damage.")
-
+            winning = False
     else:
         print("Your attack fails to penetrate your enemies defenses!")
